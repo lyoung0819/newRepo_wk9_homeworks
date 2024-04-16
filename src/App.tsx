@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import { useState } from 'react'
-import Task from './components/Task'
 import { ToDoType, TaskType } from './types';
+import ToDoDisplay from './components/ToDoDisplay';
 
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
 
     return (
       <Container>
-          <Task />
+          <ToDoDisplay />
       </Container>
     )
 }
