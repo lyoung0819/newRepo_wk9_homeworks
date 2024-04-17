@@ -5,6 +5,10 @@ import Form from 'react-bootstrap/Form';
 import { TaskType } from '../types';
 
 
+type CreateTaskFormProps = {
+    addNewTask: (newTaskData: TaskType) => void
+}
+
 export default function CreateTasksForm() {
     const [newTask, setNewTask] = useState<TaskType>({ title: '', description: '', dueDate: '', complete: false, priority: 0 })
 
@@ -14,12 +18,17 @@ export default function CreateTasksForm() {
 
     }
 
+    const handleFormSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        addNewTask(newTask)
+    }
+
     return (
         <>
         <Card>
             <Card.Header>Add New Task:</Card.Header>
             <Card.Body>
-                <Form>
+                <Form onSubmit={handleFormSubmit}>
                     <Form.Label>Title</Form.Label>
                     <Form.Control name='title' placeholder='Enter Task Title' value={newTask.title} onChange={handleInputChange} />
                     <Form.Label>Description</Form.Label>
@@ -29,9 +38,7 @@ export default function CreateTasksForm() {
                     <Form.Label>Priority</Form.Label>
                     <Form.Control name='priority' placeholder='Enter Task Title' value={newTask.priority} onChange={handleInputChange} />
                 </Form>
-                <Button>
-
-                </Button>
+                <Button type='submit'>Add Task</Button>
             </Card.Body>
         </Card>
         </>

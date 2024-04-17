@@ -5,8 +5,13 @@ import ToDoDisplay from './components/ToDoDisplay';
 
 
 export default function App() {
-    const [newToDo, setNewToDo] = useState<ToDoType[]>([]);
-    const [task, newTask] = useState<TaskType[]>([])
+    const [newToDo, setNewToDo] = useState<TaskType[]>([]);
+    const [task, setNewTask] = useState<TaskType>()
+
+    const addNewTask = (newTaskData: TaskType) => {
+      const newTask: TaskType = {...newTaskData}
+      setNewToDo([...newToDo, newTask])
+    }
 
     return (
       <Container>
