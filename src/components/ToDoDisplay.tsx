@@ -23,7 +23,7 @@ export default function ToDoDisplay(){
 
 
     const addNewTask = (newTaskData: TaskFormDataType) => {
-        const newTask: TaskType = {...newTaskData, title:'', description:'', dueDate:'', complete:false, priority:0}
+        const newTask: TaskType = {...newTaskData, complete:false}
         setTasks([...tasks, newTask]) 
       }
 
