@@ -3,10 +3,6 @@ import CreateTasksForm from './CreateTaskForm'
 import { TaskType, TaskFormDataType } from '../types';
 import Task from './Task';
 
-
-type ToDoDisplayProps = {}
-
-
 export default function ToDoDisplay(){
     const [tasks, setTasks] = useState<TaskType[]>([
         {
@@ -28,7 +24,7 @@ export default function ToDoDisplay(){
 
     const addNewTask = (newTaskData: TaskFormDataType) => {
         const newTask: TaskType = {...newTaskData, title:'', description:'', dueDate:'', complete:false, priority:0}
-        setTasks([...tasks, newTask])
+        setTasks([...tasks, newTask]) 
       }
 
     return (

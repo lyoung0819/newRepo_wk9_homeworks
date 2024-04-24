@@ -14,7 +14,7 @@ export default function CreateTasksForm({ addNewTask }: CreateTaskFormProps) {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.name, event.target.value);
-        setNewTask({...newTask, [event.target.name]:event.target.value})
+        setNewTask({...newTask, [event.target.name]:event.target.value })
 
     }
 
@@ -37,8 +37,8 @@ export default function CreateTasksForm({ addNewTask }: CreateTaskFormProps) {
                     <Form.Control name='dueDate' placeholder='Enter Task Due Date' value={newTask.dueDate} onChange={handleInputChange} />
                     <Form.Label>Priority</Form.Label>
                     <Form.Control name='priority' placeholder='Enter Task Priority' value={newTask.priority} onChange={handleInputChange} />
+                    <Button className='w-100 mt-3 btn btn-dark' type='submit'>Add Task</Button>
                 </Form>
-                <Button className='w-100 mt-3' type='submit'>Add Task</Button>
             </Card.Body>
         </Card>
         </>
