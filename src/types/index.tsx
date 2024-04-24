@@ -12,3 +12,9 @@ export type TaskType = {
       priority: number
   }
   
+export type TaskFormDataType = {
+  title:string,
+  description:string,
+  dueDate: string,
+  priority: number
+}

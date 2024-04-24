@@ -2,13 +2,13 @@
 import { useState } from 'react';
 import { TaskType } from "../types"
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 type TaskProps = {
-  newTask: TaskType,
+    task: TaskType,
 }
 
-export default function Task({ newTask }: TaskProps) {
+export default function Task({ task }: TaskProps) {
   let [status, setStatus] = useState(false);
   
 
@@ -20,14 +20,14 @@ export default function Task({ newTask }: TaskProps) {
   return (
     <>
       <Card>
-        <Card.Header>{newTask.title} </Card.Header>
+        <Card.Header>{task.title} </Card.Header>
         <Card.Body>
-          <Card.Subtitle>{newTask.dueDate}</Card.Subtitle>
-          <Card.Subtitle>'Priority Level:'{newTask.priority}</Card.Subtitle>
-          <Card.Text>{newTask.description}</Card.Text>
-          <Button variant='Info' onClick={() => {handleTaskCompleted}}>Mark Completed</Button>
+          <Card.Subtitle>'Priority Level:'{task.priority}</Card.Subtitle>
+          <Card.Text>Due Date: {task.dueDate}</Card.Text>
+          <Card.Text> Description: {task.description}</Card.Text>
         </Card.Body>
       </Card>
     </>
   )
 }
+//         <Button variant='Info' onClick={() => {handleTaskCompleted}}>Mark Completed</Button>
